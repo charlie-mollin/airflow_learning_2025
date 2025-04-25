@@ -81,4 +81,4 @@ with DAG(
         python_callable=_store_user
     )
 
-    extract_user >> process_user
+    create_table >> is_api_available >> extract_user >> process_user >> store_user
